@@ -26,10 +26,20 @@
         android:text="@string/profile_creation"
         android:textSize="@dimen/_24sdp"
         android:fontFamily="@font/robotobold"/>
+    <TextView
+        android:id="@+id/tvSubText"
+        android:layout_below="@+id/tvProfileCreation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:text="@string/use_form"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/subTextGrey"
+        android:fontFamily="@font/robotomedium"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_above="@id/btNext"
-        android:layout_below="@+id/tvProfileCreation"
+        android:layout_below="@+id/tvSubText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -38,16 +48,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:text="@string/use_form"
-                android:textSize="@dimen/_12sdp"
-                android:textColor="@color/subTextGrey"
-                android:fontFamily="@font/robotomedium"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="@dimen/_130sdp"
@@ -124,7 +124,6 @@
                     android:inputType="textEmailAddress"
                     android:singleLine="true"
                     android:text="@={viewModel.email}"
-
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
                     android:fontFamily="@font/robotomedium"/>
