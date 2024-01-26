@@ -46,11 +46,12 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:text="@string/use_form"
                 android:textSize="@dimen/_12sdp"
+                android:textColor="@color/subTextGrey"
                 android:fontFamily="@font/robotomedium"/>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="@dimen/_150sdp"
-                android:layout_height="@dimen/_200sdp"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_180sdp"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_24sdp"
@@ -76,20 +77,22 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/myTextInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_54sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                 app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                 app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                 app:boxCornerRadiusTopStart="@dimen/_10sdp"
-                app:boxStrokeColor="@color/grey"
+                app:boxStrokeWidth="@dimen/_2sdp"
+                app:boxStrokeWidthFocused="@dimen/_2sdp"
+                app:boxStrokeColor="@color/lightGrey"
                 app:hintTextColor="@color/black"
                 android:fontFamily="@font/robotomedium">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/my_editText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:hint="@string/first_name"
                     android:inputType="text"
                     android:text="@={viewModel.name}"
@@ -102,19 +105,21 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_54sdp"
                 android:layout_marginTop="16dp"
                 app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                 app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                 app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                 app:boxCornerRadiusTopStart="@dimen/_10sdp"
-                app:boxStrokeColor="@color/grey"
+                app:boxStrokeWidth="@dimen/_2sdp"
+                app:boxStrokeWidthFocused="@dimen/_2sdp"
+                app:boxStrokeColor="@color/lightGrey"
                 app:hintTextColor="@color/black"
                 android:fontFamily="@font/robotomedium">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:hint="@string/email_address"
                     android:inputType="textEmailAddress"
                     android:singleLine="true"
@@ -127,24 +132,25 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_54sdp"
                 android:layout_marginTop="16dp"
                 app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                 app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                 app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                 app:boxCornerRadiusTopStart="@dimen/_10sdp"
-                app:boxStrokeColor="@color/grey"
+                app:boxStrokeWidth="@dimen/_2sdp"
+                app:boxStrokeWidthFocused="@dimen/_2sdp"
+                app:boxStrokeColor="@color/lightGrey"
                 app:hintTextColor="@color/black"
                 android:fontFamily="@font/robotomedium">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     android:singleLine="true"
                     android:text="@={viewModel.password}"
-
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
                     android:fontFamily="@font/robotomedium"/>
@@ -152,25 +158,28 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_54sdp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="@dimen/_16sdp"
                 app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                 app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                 app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                 app:boxCornerRadiusTopStart="@dimen/_10sdp"
-                app:boxStrokeColor="@color/grey"
+                app:boxStrokeWidth="@dimen/_2sdp"
+                app:boxStrokeWidthFocused="@dimen/_2sdp"
+                app:boxStrokeColor="@color/lightGrey"
                 app:hintTextColor="@color/black"
                 android:fontFamily="@font/robotomedium">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:hint="@string/website"
                     android:singleLine="true"
+                    android:inputType="textWebEmailAddress"
                     android:text="@={viewModel.website}"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
-                    android:layout_marginBottom="@dimen/_16sdp"
                     android:fontFamily="@font/robotomedium" />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -179,6 +188,8 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btNext"
         style="@style/ButtonThemeUpdated"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
         android:layout_alignParentBottom="true"
         android:onClick="@{viewModel::onSubmit}"
         android:text="@string/submit" />

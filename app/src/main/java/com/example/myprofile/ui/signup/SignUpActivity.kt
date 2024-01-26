@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
@@ -68,12 +69,22 @@ class SignUpActivity : BaseActivity() {
                     }
                     startActivity(intent)
                     overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left)
+                    clearData()
                 }
             }
         }
         viewModel.validationErrorLiveData.observe(this) {
             Toast.makeText(this, getString(it), Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun clearData() {
+        viewModel.name.set("")
+        viewModel.email.set("")
+        viewModel.website.set("")
+        viewModel.password.set("")
+        isImageUpload = false
+        binding.ivProfile.visibility = View.GONE
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

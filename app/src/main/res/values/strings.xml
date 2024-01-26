@@ -2,7 +2,7 @@
     <string name="app_name">My Profile</string>
     <string name="profile_creation">Profile Creation</string>
     <string name="use_form">Use the form below o submit your portfolio.\nAn email and password are required.</string>
-    <string name="add_avatar">Tap to add avatar</string>
+    <string name="add_avatar">Tap to add\navatar</string>
     <string name="first_name">First Name</string>
     <string name="email_address">Email Address</string>
     <string name="password">Password</string>

@@ -15,12 +15,6 @@ import java.util.concurrent.Executor
 @Suppress("DEPRECATION")
 abstract class BaseActivity : AppCompatActivity() {
 
-    private val readImagePermission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
-        Manifest.permission.READ_MEDIA_IMAGES
-    else
-        Manifest.permission.READ_EXTERNAL_STORAGE
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         onCreateView()
