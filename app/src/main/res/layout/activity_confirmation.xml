@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.example.myprofile.ui.confirmation.viewModel.ConfirmationViewModel" />
+        <variable
+            name="viewModel"
+            type="com.example.myprofile.ui.confirmation.viewModel.ConfirmationViewModel" />
+    </data>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/fab_margin"
+        android:orientation="vertical"
+        tools:context=".ui.confirmation.ConfirmationActivity">
+
+        <TextView
+            android:id="@+id/tvProfileCreation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={viewModel.header}"
+            android:textSize="@dimen/_24sdp"
+            android:fontFamily="@font/robotobold"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_above="@id/btNext"
+            android:layout_below="@+id/tvProfileCreation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@string/superHit"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/robotomedium"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvImage"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="@dimen/_160sdp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    app:cardBackgroundColor="@color/grey"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/ivProfile"
+                        android:scaleType="centerCrop"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tvUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/robotomedium"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@={viewModel.name}"
+                    android:gravity="center"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/robotomedium"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@={viewModel.email}"
+                    android:gravity="center"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/robotomedium"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btNext"
+            style="@style/ButtonThemeUpdated"
+            android:layout_alignParentBottom="true"
+            android:text="@string/signIn" />
+    </RelativeLayout>
+</layout>

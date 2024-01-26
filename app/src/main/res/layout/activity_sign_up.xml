@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.example.myprofile.ui.signup.SignUpActivity" />
+        <variable
+            name="viewModel"
+            type="com.example.myprofile.ui.signup.viewModel.SignUpViewModel" />
+    </data>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/fab_margin"
+    android:orientation="vertical"
+    tools:context=".ui.signup.SignUpActivity">
+
+    <TextView
+        android:id="@+id/tvProfileCreation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/profile_creation"
+        android:textSize="@dimen/_24sdp"
+        android:fontFamily="@font/robotobold"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_above="@id/btNext"
+        android:layout_below="@+id/tvProfileCreation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/use_form"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/robotomedium"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:onClick="@{viewModel::addImage}"
+                app:cardBackgroundColor="@color/grey"
+                app:cardCornerRadius="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/tvAddImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/add_avatar"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/robotomedium"
+                    android:textSize="@dimen/_16sdp" />
+                <ImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/myTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                app:boxStrokeColor="@color/grey"
+                app:hintTextColor="@color/black"
+                android:fontFamily="@font/robotomedium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/my_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/first_name"
+                    android:inputType="text"
+                    android:text="@={viewModel.name}"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:fontFamily="@font/robotomedium"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                app:boxStrokeColor="@color/grey"
+                app:hintTextColor="@color/black"
+                android:fontFamily="@font/robotomedium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email_address"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:text="@={viewModel.email}"
+
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:fontFamily="@font/robotomedium"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                app:boxStrokeColor="@color/grey"
+                app:hintTextColor="@color/black"
+                android:fontFamily="@font/robotomedium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:text="@={viewModel.password}"
+
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:fontFamily="@font/robotomedium"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                app:boxStrokeColor="@color/grey"
+                app:hintTextColor="@color/black"
+                android:fontFamily="@font/robotomedium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/website"
+                    android:singleLine="true"
+                    android:text="@={viewModel.website}"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    android:fontFamily="@font/robotomedium" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btNext"
+        style="@style/ButtonThemeUpdated"
+        android:layout_alignParentBottom="true"
+        android:onClick="@{viewModel::onSubmit}"
+        android:text="@string/submit" />
+</RelativeLayout>
+</layout>
