@@ -97,6 +97,7 @@
                     android:inputType="text"
                     android:text="@={viewModel.name}"
                     android:singleLine="true"
+                    android:maxLength="7"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
                     android:fontFamily="@font/robotomedium"

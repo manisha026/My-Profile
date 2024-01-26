@@ -6,7 +6,6 @@ import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.text.util.Linkify
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.example.myprofile.R
@@ -14,6 +13,7 @@ import com.example.myprofile.databinding.ActivityConfirmationBinding
 import com.example.myprofile.ui.BaseActivity
 import com.example.myprofile.ui.confirmation.viewModel.ConfirmationViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
 
 
 @AndroidEntryPoint
@@ -52,8 +52,13 @@ class ConfirmationActivity  : BaseActivity() {
     }
 
     override fun onCreateView() {
-        viewModel.header.set("Hello, "+intent.getStringExtra("name")+"!")
-        viewModel.name.set(intent.getStringExtra("name"))
+        val name = intent.getStringExtra("name")
+        val upperString: String =
+            name!!.substring(0, 1).uppercase(Locale.getDefault()) + name.substring(1)
+                .lowercase(Locale.getDefault())
+
+        viewModel.header.set("Hello, $upperString!")
+        viewModel.name.set(upperString.toString())
         viewModel.email.set(intent.getStringExtra("email"))
 
 
