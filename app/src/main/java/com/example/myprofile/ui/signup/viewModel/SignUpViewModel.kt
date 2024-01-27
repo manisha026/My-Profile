@@ -1,4 +1,5 @@
 package com.example.myprofile.ui.signup.viewModel
+
 import android.view.View
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
@@ -13,6 +14,7 @@ class SignUpViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val validations = Validations.getInstance()
+
     var name: ObservableField<String> = ObservableField("")
     var email: ObservableField<String> = ObservableField("")
     var password: ObservableField<String> = ObservableField("")

@@ -1,4 +1,5 @@
 package com.example.myprofile.ui.signup
+
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -25,12 +26,12 @@ import java.io.ByteArrayOutputStream
 @AndroidEntryPoint
 class SignUpActivity : BaseActivity() {
 
-    lateinit var binding: ActivitySignUpBinding
+    private lateinit var binding: ActivitySignUpBinding
     val viewModel: SignUpViewModel by viewModels()
     private val CAMERA_REQUEST = 101
-    lateinit var bitmapImage: Bitmap
-    var isImageUpload: Boolean = false
-    lateinit var byteArray: ByteArray
+    private lateinit var bitmapImage: Bitmap
+    private var isImageUpload: Boolean = false
+    private lateinit var byteArray: ByteArray
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
