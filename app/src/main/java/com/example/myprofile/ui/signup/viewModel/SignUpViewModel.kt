@@ -26,7 +26,7 @@ class SignUpViewModel @Inject constructor(
         val passwordValidationResponse = validations.checkPasswordValidation(password.get())
         val urlValidationResponse = validations.checkWebsiteValidation(website.get())
         if (!nameValidationResponse.valid && !emailValidationResponse.valid && !passwordValidationResponse.valid && !urlValidationResponse.valid){
-            validationErrorLiveData.postValue(validations.enterData().msgId)
+            validationErrorLiveData.postValue(validations.handleEmptyForm().msgId)
         }else if (!nameValidationResponse.valid ){
             validationErrorLiveData.postValue(nameValidationResponse.msgId)
         }else if (!emailValidationResponse.valid ){
