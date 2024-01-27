@@ -9,5 +9,4 @@
     <color name="blue">#FF89C8E3</color>
     <color name="subTextGrey">#FFA8A7A8</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/lightGrey</color>
-
 </resources>
