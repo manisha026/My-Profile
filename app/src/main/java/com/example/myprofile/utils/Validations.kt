@@ -2,6 +2,7 @@ import android.util.Patterns
 import android.webkit.URLUtil
 import androidx.annotation.Keep
 import com.example.myprofile.R
+import com.example.myprofile.utils.EmailValidator
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -31,7 +32,7 @@ class Validations private constructor() {
     fun checkEmailValidation(email: String?): ValidationResponse {
         return if (email!!.isEmpty() ) {
             ValidationResponse(false, R.string.please_enter_email)
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(email.toString()).matches()) {
+        } else if (!EmailValidator.isValidEmail(email.toString())) {
                 ValidationResponse(false, R.string.please_enter_valid_email)
         } else {
                 ValidationResponse(true, 0)
