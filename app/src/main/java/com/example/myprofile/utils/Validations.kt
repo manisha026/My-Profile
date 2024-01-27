@@ -60,7 +60,7 @@ class Validations private constructor() {
         return ValidationResponse(false,R.string.please_enter_data)
 
     }
-    private fun isValidPassword(password: String?): Boolean {
+    fun isValidPassword(password: String?): Boolean {
         val pattern: Pattern
         val passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$"
         pattern = Pattern.compile(passwordPattern)

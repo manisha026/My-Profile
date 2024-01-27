@@ -58,9 +58,19 @@ dependencies {
     implementation ("com.intuit.sdp:sdp-android:1.0.6")
     implementation("androidx.databinding:databinding-runtime:8.2.2")
     implementation ("com.google.dagger:hilt-android:2.48")
-
     kapt ("com.google.dagger:hilt-compiler:2.48")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+        // Required -- JUnit 4 framework
+        testImplementation ("junit:junit:4.13.2")
+        // Optional -- Robolectric environment
+//        testImplementation ("androidx.test:core:$androidXTestVersion")
+//        // Optional -- Mockito framework
+//        testImplementation ("org.mockito:mockito-core:$mockitoVersion")
+//        // Optional -- mockito-kotlin
+//        testImplementation ("org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion")
+//        // Optional -- Mockk framework
+//        testImplementation ("io.mockk:mockk:$mockkVersion")
 }
