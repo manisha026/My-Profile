@@ -89,10 +89,6 @@ class SignUpActivity : BaseActivity() {
             viewModel.password.set("")
             isImageUpload = false
             binding.ivProfile.visibility = View.GONE
-            binding.etFirstName.isFocusable = false
-            binding.etEmail.isFocusable = false
-            binding.etPassword.isFocusable = false
-            binding.etWebsite.isFocusable = false
         }, 1000)
 
     }

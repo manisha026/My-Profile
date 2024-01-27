@@ -36,6 +36,8 @@ class SignUpViewModel @Inject constructor(
             validationErrorLiveData.postValue(emailValidationResponse.msgId)
         }else if (!passwordValidationResponse.valid ){
             validationErrorLiveData.postValue(passwordValidationResponse.msgId)
+        }else if (!urlValidationResponse.valid ){
+            validationErrorLiveData.postValue(urlValidationResponse.msgId)
         }else{
             navLiveData.postValue(Constants.SignupNavigationEnum.NavSubmit)
         }
