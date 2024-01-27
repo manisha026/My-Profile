@@ -34,7 +34,7 @@ class ConfirmationActivity  : BaseActivity() {
         val content = SpannableString(intent.getStringExtra("url"))
         content.setSpan(UnderlineSpan(), 0, content.length, 0)
         binding.tvUrl.text = content
-        Linkify.addLinks(binding.tvUrl, Linkify.WEB_URLS);
+        Linkify.addLinks(binding.tvUrl, Linkify.WEB_URLS)
         if (intent.getStringExtra("url")!!.isNotEmpty()){
             binding.tvUrl.visibility = View.VISIBLE
         }
@@ -58,9 +58,8 @@ class ConfirmationActivity  : BaseActivity() {
                 .lowercase(Locale.getDefault())
 
         viewModel.header.set("Hello, $upperString!")
-        viewModel.name.set(upperString.toString())
+        viewModel.name.set(upperString)
         viewModel.email.set(intent.getStringExtra("email"))
-
-
     }
+
 }

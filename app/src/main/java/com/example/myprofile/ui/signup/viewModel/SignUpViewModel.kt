@@ -1,9 +1,5 @@
 package com.example.myprofile.ui.signup.viewModel
-
-import android.content.Context
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -42,9 +38,6 @@ class SignUpViewModel @Inject constructor(
         }
     }
     fun addImage(view: View) {
-        Log.d("new image","image clicked")
-        print("new message for the loop")
         navLiveData.postValue(Constants.SignupNavigationEnum.NavAddImage)
-
     }
 }

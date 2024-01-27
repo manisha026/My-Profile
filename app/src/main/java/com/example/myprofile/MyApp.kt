@@ -2,20 +2,13 @@ package com.example.myprofile
 
 import android.app.Application
 import android.content.Context
-import android.content.SharedPreferences
 import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.ProcessLifecycleOwner
-import com.example.myprofile.utils.Utils
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class MyApp : Application(), LifecycleObserver{
 
-    var activityVisible: Boolean = false
-
-    fun isActivityVisible(): Boolean {
-        return activityVisible
-    }
+    private var activityVisible: Boolean = false
 
     fun activityResumed() {
         activityVisible = true
@@ -27,7 +20,6 @@ class MyApp : Application(), LifecycleObserver{
 
     companion object {
         lateinit var mMyApp: MyApp
-        lateinit var mUtils: Utils
 
         lateinit var appContext: Context
     }

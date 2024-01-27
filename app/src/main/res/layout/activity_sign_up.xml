@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
 
         <import type="android.view.View" />
@@ -10,9 +12,6 @@
             type="com.example.myprofile.ui.signup.viewModel.SignUpViewModel" />
     </data>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/fab_margin"
@@ -71,7 +70,8 @@
                 <ImageView
                     android:id="@+id/ivProfile"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    tools:ignore="ContentDescription" />
             </androidx.cardview.widget.CardView>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -90,14 +90,13 @@
                 android:fontFamily="@font/robotomedium">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/my_editText"
+                    android:id="@+id/et_first_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/first_name"
                     android:inputType="text"
                     android:text="@={viewModel.name}"
                     android:singleLine="true"
-                    android:maxLength="7"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
                     android:fontFamily="@font/robotomedium"
@@ -119,6 +118,7 @@
                 android:fontFamily="@font/robotomedium">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/email_address"
@@ -145,6 +145,7 @@
                 android:fontFamily="@font/robotomedium">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/password"
@@ -172,6 +173,7 @@
                 android:fontFamily="@font/robotomedium">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_website"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/website"

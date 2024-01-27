@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
 
         <import type="android.view.View" />
@@ -10,9 +12,6 @@
             type="com.example.myprofile.ui.confirmation.viewModel.ConfirmationViewModel" />
     </data>
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/fab_margin"
@@ -46,6 +45,7 @@
                     android:layout_marginTop="@dimen/_8sdp"
                     android:text="@string/superHit"
                     android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/subTextGrey"
                     android:fontFamily="@font/robotomedium"/>
 
                 <androidx.cardview.widget.CardView
@@ -62,7 +62,8 @@
                         android:id="@+id/ivProfile"
                         android:scaleType="centerCrop"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:importantForAccessibility="no" />
                 </androidx.cardview.widget.CardView>
 
                 <TextView

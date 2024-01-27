@@ -1,10 +1,10 @@
 package com.example.myprofile.ui.signup
-
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.os.Handler
 import android.provider.MediaStore
 import android.view.View
 import android.widget.Toast
@@ -21,6 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import java.io.ByteArrayOutputStream
 
 
+@Suppress("DEPRECATION")
 @AndroidEntryPoint
 class SignUpActivity : BaseActivity() {
 
@@ -79,20 +80,29 @@ class SignUpActivity : BaseActivity() {
     }
 
     private fun clearData() {
-        viewModel.name.set("")
-        viewModel.email.set("")
-        viewModel.website.set("")
-        viewModel.password.set("")
-        isImageUpload = false
-        binding.ivProfile.visibility = View.GONE
+        val handler = Handler()
+        handler.postDelayed( { // Do something after 5s = 5000ms
+            viewModel.name.set("")
+            viewModel.email.set("")
+            viewModel.website.set("")
+            viewModel.password.set("")
+            isImageUpload = false
+            binding.ivProfile.visibility = View.GONE
+            binding.etFirstName.isFocusable = false
+            binding.etEmail.isFocusable = false
+            binding.etPassword.isFocusable = false
+            binding.etWebsite.isFocusable = false
+        }, 1000)
+
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
             bitmapImage = data!!.extras!!["data"] as Bitmap
             binding.ivProfile.setImageBitmap(bitmapImage)
-            isImageUpload = true;
+            isImageUpload = true
         }
     }
 
@@ -102,12 +112,11 @@ class SignUpActivity : BaseActivity() {
                 Manifest.permission.CAMERA
             ) == PackageManager.PERMISSION_DENIED
         ) {
-            requestPermissions(arrayOf(android.Manifest.permission.CAMERA), 101)
+            requestPermissions(arrayOf(Manifest.permission.CAMERA), 101)
 
         } else {
             val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(cameraIntent, CAMERA_REQUEST)
-
         }
     }
 

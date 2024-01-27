@@ -29,7 +29,6 @@ class Validations private constructor() {
     }
 
     fun checkEmailValidation(email: String?): ValidationResponse {
-        var a = Patterns.EMAIL_ADDRESS.matcher(email.toString()).matches()
         return if (email!!.isEmpty() ) {
             ValidationResponse(false, R.string.please_enter_email)
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email.toString()).matches()) {
@@ -42,13 +41,14 @@ class Validations private constructor() {
     fun checkPasswordValidation(password: String?): ValidationResponse {
         return if (password!!.isNotEmpty() && password.length < 8 && !isValidPassword(password)) {
             ValidationResponse(false, R.string.please_enter_valid_password)
+        } else if (password.isEmpty()) {
+            ValidationResponse(false, R.string.please_enter_password)
         } else {
             ValidationResponse(true, 0)
         }
     }
 
     fun checkWebsiteValidation(website: String?): ValidationResponse {
-        var a = URLUtil.isValidUrl(website)
         return if (website!!.isNotEmpty() && !URLUtil.isValidUrl(website)) {
             ValidationResponse(false, R.string.please_enter_valid_url)
         } else {

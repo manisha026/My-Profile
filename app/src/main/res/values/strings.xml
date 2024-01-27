@@ -14,6 +14,7 @@
     <string name="please_enter_valid_email">Please enter valid email address</string>
     <string name="please_enter_valid_url">Please enter valid url</string>
     <string name="please_enter_valid_password">Please enter valid password</string>
+    <string name="please_enter_password">Please enter password</string>
     <string name="please_enter_data">Please enter data</string>
     <string name="superHit">Your super-awesome portfolio has been successfully submitted! The preview below is what the community will see!</string>
 </resources>
