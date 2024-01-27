@@ -1,5 +1,6 @@
 package com.example.myprofile
 import com.example.myprofile.utils.EmailValidator
+import com.example.myprofile.utils.Validations
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test

@@ -4,6 +4,7 @@ import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myprofile.utils.Constants
+import com.example.myprofile.utils.Validations
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
